@@ -6,7 +6,7 @@
 ### Psychopathic Tier
 
 Target dialect: **C++26**  
-Version: **0.1**  
+Version: **9.9**  
 Status: **Draft standard**  
 ---
 
@@ -12128,7 +12128,6 @@ Parameters: `suppress_statuses`, `suppress_status_field`.
 
 Limits: immediately-invoked lambdas inside expressions are not recognized by the extractor and rely on review.
 
-### Rule CEP-LINT-EMPTY-CATCH
 
 **Severity 1. Sections: Law 6, 12.2. Check: `flat_code_regex`.**
 

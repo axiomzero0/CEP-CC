@@ -1,0 +1,63 @@
+{
+  "scenarios": [
+    {
+      "name": "self-source-clean",
+      "targets": ["../src"],
+      "expect_total": 0
+    },
+    {
+      "name": "violation-sweep",
+      "targets": ["fixtures/violations.cpp"],
+      "expect_by_rule": {
+        "CEP-LINT-COMMENTED-CODE": 1,
+        "CEP-LINT-CONSTANT-RETURN": 1,
+        "CEP-LINT-EMPTY-BRANCH": 1,
+        "CEP-LINT-EMPTY-CATCH": 1,
+        "CEP-LINT-FUNC-BLOCK": 5,
+        "CEP-LINT-MAGIC-NUMBER": 4,
+        "CEP-LINT-MACRO-PREFIX": 1,
+        "CEP-LINT-NAMING-FUNC": 3,
+        "CEP-LINT-NAMING-TYPE": 2,
+        "CEP-LINT-PLACEHOLDER-COMMENT": 1,
+        "CEP-LINT-PLACEHOLDER-TEXT": 1,
+        "CEP-LINT-STATUS-VALUE": 1,
+        "CEP-LINT-STUB-BODY": 1,
+        "CEP-LINT-STUB-DECL": 1,
+        "CEP-LINT-TODO-OWNER": 2
+      }
+    },
+    {
+      "name": "clean-file",
+      "targets": ["fixtures/clean.cpp"],
+      "expect_total": 0
+    },
+    {
+      "name": "hot-bans",
+      "targets": ["fixtures/hot_violations.cpp"],
+      "expect_by_rule": {
+        "CEP-LINT-HOT-BANNED": 6
+      }
+    },
+    {
+      "name": "no-header",
+      "targets": ["fixtures/no_header.cpp"],
+      "expect_by_rule": {
+        "CEP-LINT-FILE-HEADER": 1,
+        "CEP-LINT-FUNC-BLOCK": 1
+      }
+    },
+    {
+      "name": "doc-sync-stale",
+      "config": "docsync_profile.json",
+      "targets": ["fixtures/clean.cpp"],
+      "expect_by_rule": {
+        "CEP-LINT-DOC-SYNC": 2
+      }
+    },
+    {
+      "name": "repo-root-exclusions",
+      "targets": ["../../../"],
+      "expect_total": 0
+    }
+  ]
+}

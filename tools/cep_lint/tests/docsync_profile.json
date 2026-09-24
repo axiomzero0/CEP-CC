@@ -1,0 +1,10 @@
+{
+  "include": ["../../../.cep/cep_lint.json"],
+  "rules": {
+    "CEP-LINT-DOC-SYNC": {
+      "params": {
+        "doc_path": "fixtures/stale_standard.md"
+      }
+    }
+  }
+}
